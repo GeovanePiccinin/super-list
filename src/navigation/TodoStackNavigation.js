@@ -3,8 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native'
 
-import TodoList from './screens/TodoList';
-import TodoForm from './screens/TodoForm';
+import TodoList from '../screens/TodoList';
+import TodoForm from '../screens/TodoForm';
 
 const TodoStack = createNativeStackNavigator();
 

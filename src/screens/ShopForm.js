@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
 import Toast from 'react-native-toast-message';
-import Database from '../Database';
+import Database from '../libs/Database';
 
 export const SHOP_LIST = 'shop-list'
 

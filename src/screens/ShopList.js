@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, FlatList, View, Text, SafeAreaView, Alert, TouchableOpacity } from 'react-native';
 
 import AppItem from '../components/AppItem'
-import Database from '../Database'
+import Database from '../libs/Database'
 import { SHOP_LIST } from './ShopForm';
 
 const ORDER_BY_ID = 'order-by-id'

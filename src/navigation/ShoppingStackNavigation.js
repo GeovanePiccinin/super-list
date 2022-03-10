@@ -1,7 +1,7 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ShopForm from './screens/ShopForm';
-import ShopList from './screens/ShopList'
+import ShopForm from '../screens/ShopForm';
+import ShopList from '../screens/ShopList'
 import { Feather as Icon } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native'
 
@@ -10,13 +10,13 @@ const ShoppingStack = createNativeStackNavigator();
 
 
 
-export default function TodoStackNavigation() {
+export default function ShoppingStackNavigation() {
     return (
         <ShoppingStack.Navigator>
             <ShoppingStack.Screen name="ShopList" component={ShopList} 
             options={({ navigation }) => ({
                 headerStyle: {
-                    backgroundColor: '#33a1fd',
+                    backgroundColor: '#00c68e',
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -38,7 +38,7 @@ export default function TodoStackNavigation() {
                 options={{
                     title: "Shopping Item",
                     headerStyle: {
-                        backgroundColor: '#33a1fd',
+                        backgroundColor: '#00c68e',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
