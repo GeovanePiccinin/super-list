@@ -1,22 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ShopForm from '../screens/ShopForm';
 import ShopList from '../screens/ShopList'
 import { Feather as Icon } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native'
-
+import { ThemeContext } from "../context/ThemeContext";
 
 const ShoppingStack = createNativeStackNavigator();
 
-
-
 export default function ShoppingStackNavigation() {
+
+    const theme = useContext(ThemeContext);
+
     return (
         <ShoppingStack.Navigator>
             <ShoppingStack.Screen name="ShopList" component={ShopList} 
             options={({ navigation }) => ({
                 headerStyle: {
-                    backgroundColor: '#00c68e',
+                    backgroundColor: theme.state.baseColor,
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -38,7 +39,7 @@ export default function ShoppingStackNavigation() {
                 options={{
                     title: "Shopping Item",
                     headerStyle: {
-                        backgroundColor: '#00c68e',
+                        backgroundColor: theme.state.baseColor,
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import TabNavigator from "./TabNavigator"
@@ -7,10 +8,12 @@ import Settings from "../screens/Settings"
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
+  const theme = useContext(ThemeContext);
+  
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerStyle: {backgroundColor: '#00c68e'},
+        headerStyle: {backgroundColor: theme.state.baseColor },
         headerTitleStyle: {color: "#fff"},
         drawerStyle: {
           backgroundColor: '#e3e3e6',
@@ -25,7 +28,7 @@ const DrawerNavigator = () => {
         options={{
           title: "Settings",
           headerStyle: {
-            backgroundColor: '#00c68e',
+            backgroundColor: theme.state.baseColor,
           },
           headerTintColor: '#fff',
           headerTitleStyle: {

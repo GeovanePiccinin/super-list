@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Feather as Icon } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native'
-
+import { ThemeContext } from "../context/ThemeContext";
 import TodoList from '../screens/TodoList';
 import TodoForm from '../screens/TodoForm';
 
 const TodoStack = createNativeStackNavigator();
 
 export default function TodoStackNavigation() {
+
+  const theme = useContext(ThemeContext);
   return (
     <TodoStack.Navigator>
       <TodoStack.Screen name="TodoList" component={TodoList}
         options={({ navigation }) => ({
           title: 'Todo List',
           headerStyle: {
-            backgroundColor: '#00c68e',
+            backgroundColor: theme.state.baseColor,
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -37,7 +39,7 @@ export default function TodoStackNavigation() {
         options={{
           title: "Task",
           headerStyle: {
-            backgroundColor: '#00c68e',
+            backgroundColor: theme.state.baseColor,
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
